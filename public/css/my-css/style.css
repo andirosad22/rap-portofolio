@@ -1,0 +1,57 @@
+:root{
+  --premier-color: #3498db;
+  --secounder-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --premier-text-color:  #333333;
+  --secounder-text-color: #fff;
+  --contrast-color :rgb(255, 169, 41);
+}
+*{
+  font-family: 'Noto Sans', sans-serif;
+  box-sizing: border-box;
+}
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .form-registration input{
+      border-radius: 0;
+      margin-bottom: -1px;
+  }
+
+  /* navabar public */
+.navbar-public{
+  background-color:var(--premier-color) !important;
+  color:var(--secounder-text-color) !important;
+}
+.navbar-public .container a{
+  color: var(--secounder-text-color);
+}
+.navbar-public .container .icon-raptech{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.navbar-public .container .icon-raptech span{
+  color: var(--secounder-color);
+}
+.active{
+  color: var(--secounder-text-color) !important;
+  font-weight: 700;
+}
+
+.login-btn{
+  margin-left: 5rem;
+}
+  /* akhir navbar public */
