@@ -20,7 +20,7 @@
                         <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
                         <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
                       </svg>
-                    <a href="#"> Home</a>
+                    <a href="/"> Home</a>
                 </li>
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-kanban-fill" viewBox="0 0 16 16">
@@ -59,6 +59,69 @@
                 <span></span>
             </div>
         </nav>
+        {{-- herro start --}}
+        <section class="herro-section">
+            <div class="text-content">
+                <h4>Hello Guys</h4>
+                <h1>I am <span>Rosad Andi Pratama</span></h1>
+                <quote>frond end developer</quote>
+                <div class="underline"></div>
+                <p>
+                    I'm a person who has a keen interest in the design layout. I think presenting an attractive design is a matter of concern in developing a branding of products. To creates a good design,  I focus on proper composition and visual decoration details in order to make it more professional. For the time being, I’m developing the skill for acquiring the UI/UX design for dynamic application and web development.
+                </p>
+                <div class="bottom">
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text-fill" viewBox="0 0 16 16">
+                        <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1m-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1m0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1"/>
+                      </svg> Download CV</a>
+                    <a href="#">More</a>
+                </div>
+            </div>
+            <div class="image-content">
+                <div class="image">
+                    <img src="{{ asset('img/elements/herro-image.png') }}">
+                </div>
+                <div class="element-main">
+                    <img src="{{ asset('img/elements/element-main.png') }}" alt="element-main">
+                </div>
+                <div class="element-submain1">
+                    <img src="{{ asset('img/elements/element-submain-1.png') }}" alt="element-submain1">
+                </div>
+                <div class="element-submain2">
+                    <img src="{{ asset('img/elements/element-submain-2.png') }}" alt="element-submain2">
+                </div>
+                <div class="element-submain3">
+                    <img src="{{ asset('img/elements/element-submain-3.png') }}" alt="element-submain3">
+                </div>
+            </div>
+            <div class="social-medias">
+                <h5>Find me on</h5>
+                <ul>
+                    <li>
+                        <a href="https://facebook.com/rosadandipratama">
+                            <img src="{{ asset('img/icons/bxl_facebook.png') }}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/rosadandipratama">
+                            <img src="{{ asset('img/icons/instagram.png') }}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/rosadandipratama">
+                            <img src="{{ asset('img/icons/whatsapp.png') }}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/rosadandipratama">
+                            <img src="{{ asset('img/icons/akar-icons_linkedin-fill.png') }}" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        {{-- herro end --}}
+
+
         <script src="{{ asset('js/myjs/home.js') }}">
         </script>
     </body>
