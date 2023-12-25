@@ -22,7 +22,6 @@ nav{
     display: flex;
     background-color: var(--color-secoundary);
     justify-content: space-around;
-   /* padding:20px 0;*/
     color: var(--text-secoundary);
     height: 50px;
     align-items: center;
@@ -351,9 +350,6 @@ nav ul li:nth-last-child(1) a{
 /*responsive breakpoint*/
 /*ukuran Tablet*/
 @media(max-width:768px){
-    nav ul.list-menu{
-
-    }
 }
 
 /*ukuran mobile*/
