@@ -13,7 +13,7 @@
   @endif
 
   <div class="table-responsive col-lg-6">
-    <a href="/dashboard/posts/create" class="btn btn-primary mb m-3">Create New Category</a>
+    <a href="/dashboard/categories/create" class="btn btn-primary mb m-3">Create New Category</a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
@@ -32,7 +32,7 @@
                 <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info"><i class="bi bi-eye"></i></a>
 
                 <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
-
+                
                 <form action="/dashboard/categories/{{ $category->slug }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf

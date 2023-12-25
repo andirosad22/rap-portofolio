@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class AdminCategoryController extends Controller
@@ -27,7 +28,8 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('admin');
+        return view('dashboard.categories.create');
     }
 
     /**
@@ -38,7 +40,13 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request ->  validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:posts'
+        ]);
+        Category::create($validateData);
+
+        return redirect('dashboard/categories')->with('success', 'New categories has been added');
     }
 
     /**
@@ -49,7 +57,7 @@ class AdminCategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return 'show here';
     }
 
     /**
@@ -60,7 +68,7 @@ class AdminCategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return $category;
     }
 
     /**
