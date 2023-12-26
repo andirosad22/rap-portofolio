@@ -19,12 +19,15 @@ body{
 }
 /*navbar*/
 nav{
+    /* margin: 0 5rem; */
+    padding: 0  5rem;
     display: flex;
     background-color: var(--color-secoundary);
-    justify-content: space-around;
+    justify-content: space-between;
     color: var(--text-secoundary);
-    height: 50px;
+    height: 5rem;
     align-items: center;
+    z-index: 9999;
 }
 nav .logo{
     font-family: 'Poppins', sans-serif;
@@ -142,11 +145,11 @@ nav ul li:nth-last-child(1) a{
 /* herro section start */
 .herro-section{
     position:relative;
-    width: 100%;
     margin-top: 1rem;
     color: var(--text-secoundary);
+    margin: 2rem 5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 /* text-content start */
@@ -183,6 +186,7 @@ nav ul li:nth-last-child(1) a{
 .herro-section .text-content p{
     font-size: 1rem;
     font-weight: 300;
+    text-align: justify;
 }
 .herro-section .text-content a{
     display: inline-block;
@@ -233,6 +237,7 @@ nav ul li:nth-last-child(1) a{
 /* text-content end */
 /* image-content start */
 .image-content{
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,10 +257,10 @@ nav ul li:nth-last-child(1) a{
 }
 .image-content .element-main{
     position: absolute;
-    right: 120px;
-    top: 200px;
+    right: 16rem;
+    top: 8rem;
     width: 260px;
-    transition: transform .5s;
+    animation: bubbleAnimation 6s infinite ease-in-out;
 }
 .image-content .element-main img{
     width: 240px;
@@ -266,40 +271,28 @@ nav ul li:nth-last-child(1) a{
     position: absolute;
 }
 .image-content .element-submain1{
-    right: 9rem;
-    top: 5rem;
-    transition: transform .5s .3s;
+    right: 14rem;
+    top: 1rem;
+    animation: bubbleAnimation 2s infinite ease-in-out;
 }
 .image-content .element-submain2{
-    right: 8rem;
-    top: 13rem;
+    right: 14rem;
+    top: 10rem;
     transition: transform .3s;
+    animation: bubbleAnimation 2s infinite ease-in-out;
 }
 .image-content .element-submain3{
-    right: 25rem;
-    top: 14rem;
-    transition: transform .3s;
-}
-.image-content:hover {
-    .element-main{
-        transform: translate(0, -4rem) rotate(-80deg);
-    }
-    .element-submain1{
-        transform: translate(0, -4rem);
-    }
-    .element-submain2{
-        transform: translate(3rem, -4rem);
-    }
-    .element-submain3{
-        transform: translate(-1rem, 1rem) rotate(360deg);
-    }
+    right: 30rem;
+    top: 10rem;
+    /* animation: spinerAnimation 2s infinite alternate; */
+    animation: 2s linear .5s infinite  spinerAnimation;
 }
 /* image-content end */
 /* social medias start */
 .social-medias{
     position: absolute;
     bottom: -4rem;
-    right: 5rem;
+    right: 11rem;
     width: 25rem;
     display: flex;
     justify-content: space-around;
@@ -320,6 +313,17 @@ nav ul li:nth-last-child(1) a{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color .3s;
+}
+.social-medias ul li img{
+    transition: filter .3s .2s;
+}
+.social-medias ul li:hover{
+    cursor: pointer;
+    background-color: var(--color-secoundary);
+    img{
+        filter: brightness(40%);
+    }
 }
 /* social medias end */
 /* herro section end */
@@ -442,4 +446,19 @@ nav ul.slide{
         transform: scale(1);
     }
 }
-
+@keyframes bubbleAnimation {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  @keyframes spinerAnimation {
+    0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}
