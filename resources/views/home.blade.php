@@ -121,6 +121,39 @@
         </section>
         {{-- herro end --}}
 
+        {{-- project start --}}
+        <section class="project-section">
+            <div class="text-project">
+                <span>What Do I Offer</span>
+                <h2>Creates Professional Design That’s
+                    Oriented Towards Client Needs</h2>
+            </div>
+            <div class="slide-bar-project">
+                <div class="card-slide active-card-slide">
+                    <div class="navigation-slide active-navigation-slide"></div>
+                    <img src="{{ asset('img/elements/mobile.png') }}" alt="">
+                    <a href="#">
+                        <h5>Programing</h5>
+                    </a>
+                </div>
+                <div class="card-slide">
+                    <div class="navigation-slide"></div>
+                    <img src="{{ asset('img/elements/mobile.png') }}" alt="">
+                    <a href="#">
+                        <h5>Web Desain</h5>
+                    </a>
+                </div>
+                <div class="card-slide">
+                    <div class="navigation-slide"></div>
+                    <img src="{{ asset('img/elements/mobile.png') }}" alt="">
+                    <a href="#">
+                        <h5>Content Design</h5>
+                    </a>
+                </div>
+            </div>
+        </section>
+        {{-- project end --}}
+
 
         <script src="{{ asset('js/myjs/home.js') }}">
         </script>
