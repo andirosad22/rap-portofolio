@@ -11,14 +11,21 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-margin: 20rem;
 }
 body{
     font-family: 'Poppins', Sans-Serif;
     overflow-x: hidden;
     background: var(--color-primary);
+    position: relative;
 }
-/*navbar*/
-nav{
+/*headerbar*/
+header{
+    position: sticky;
+    width: 100%;
+    top: 0;
     padding: 0  5rem;
     display: flex;
     background-color: var(--color-secoundary);
@@ -28,25 +35,25 @@ nav{
     align-items: center;
     z-index: 9999;
 }
-nav .logo{
+header .logo{
     font-family: 'Poppins', sans-serif;
 }
-nav .logo h4 a{
-    font-size: 1.3rem;
+header .logo h4 a{
+    font-size: 1.3rem !important;
     color: var(--text-secoundary);
 }
-nav .logo h4 a span{
+header .logo h4 a span{
     color: var(--text-primary);
     text-decoration: underline;
 }
-nav ul.list-menu{
+header ul.list-menu{
     width: 60%;
     display: flex;
     list-style: none;
     justify-content: flex-end;
     gap: 2rem;
 }
-nav ul.list-menu li{
+header ul.list-menu li{
     position: relative;
     display: flex;
     justify-content: center;
@@ -54,8 +61,9 @@ nav ul.list-menu li{
     padding-bottom: 2px;
     border-radius: 2px;
     transition: color .4s;
+    cursor: pointer;
 }
-nav ul.list-menu li::before{
+header ul.list-menu li::before{
         content: '';
         position: absolute;
         bottom: 0;
@@ -66,28 +74,28 @@ nav ul.list-menu li::before{
         border-radius: 2px;
         transition: width .4s;
     }
-nav ul.list-menu li svg{
+header ul.list-menu li svg{
     display: none;
 }
-nav ul.list-menu li a{
+header ul.list-menu li a{
     color: var(--text-secoundary);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
 }
-nav ul.list-menu li:hover::before{
+header ul.list-menu li:hover::before{
     width: 100%;
 }
-nav ul.list-menu li:hover a
+header ul.list-menu li:hover a
 {
     color: #cecece;
 }
-nav ul li:nth-last-child(1){
-    width: 100px;
+header ul li:nth-last-child(1){
+    width: 120px;
     padding: 3px 5px;
     border: 2px solid var(--color-tersier);
 }
-nav ul li:nth-last-child(1) a{
+header ul li:nth-last-child(1) a{
     color: var(--text-primary);
 }
 
@@ -144,10 +152,8 @@ nav ul li:nth-last-child(1) a{
 /* herro section start */
 .herro-section{
     position:relative;
-    margin-top: 1rem;
     color: var(--text-secoundary);
-    margin: 2rem 5rem;
-    max-height: 100vh;
+    margin: 5rem 2rem 5rem 5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -172,7 +178,7 @@ nav ul li:nth-last-child(1) a{
 .herro-section .text-content h1 span{
     color: var(--text-primary);
 }
-.herro-section .text-content quote{
+.herro-section .text-content .sub-head{
     font-size: 1rem;
     font-weight: 200;
     color: #b1b1b1;
@@ -188,33 +194,41 @@ nav ul li:nth-last-child(1) a{
     font-weight: 300;
     text-align: justify;
 }
-.herro-section .text-content a{
-    display: inline-block;
+.herro-section .text-content .bottom{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+.herro-section .text-content .bottom a{
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-secoundary);
     width: 10rem;
     height: 50px;
     padding: 4px 6px;
-    text-align: center;
-    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     border-radius: 5px;
 }
-.herro-section .text-content a:nth-last-child(2){
+.herro-section .text-content .bottom a:nth-last-child(2){
     background-color: var(--color-tersier);
     border: 2px solid var(--color-tersier);
     letter-spacing: .1rem;
 }
-.herro-section .text-content a:nth-last-child(2):hover{
+.herro-section .text-content .bottom a:nth-last-child(2):hover{
     background-color: #0f0f0f;
     border: 2px solid var(--color-tersier2);
     color: var(--text-secoundary);
     letter-spacing: 0;
+    svg{
+        display: none;
+    }
 }
 .herro-section .text-content a:nth-last-child(1){
     border: 3px solid var(--color-tersier2);
-    height: 45px;
     letter-spacing: .3rem;
 }
 .herro-section .text-content a:nth-last-child(2),
@@ -225,24 +239,21 @@ nav ul li:nth-last-child(1) a{
     background-color: var(--color-tersier);
     border-color: var(--color-tersier);
     color: var(--text-secoundary);
-    letter-spacing: .2rem;
-}
-.herro-section .text-content .bottom{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: flex-start;
-    gap: 2rem;
+    letter-spacing: .1rem;
 }
 
 /* text-content end */
-/* image-content start */
+/* image-.herro-section content start */
 .image-content{
     width: 60%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    z-index: 99;
 }
-.image-content .image{
+.herro-section .image-content .image{
     width: 245px;
     border-radius: 100px;
     overflow: hidden;
@@ -251,46 +262,44 @@ nav ul li:nth-last-child(1) a{
     justify-content: center;
     align-items: center;
 }
-.image-content .image img{
+.herro-section .image-content .image img{
     width: 260px;
     z-index: 2;
 }
-.image-content .element-main{
+.herro-section .image-content .element-main{
     position: absolute;
-    right: 16rem;
-    top: 8rem;
+    right: 13rem;
+    top: 10rem;
     width: 260px;
     animation: bubbleAnimation 6s infinite ease-in-out;
 }
-.image-content .element-main img{
+.herro-section .image-content .element-main img{
     width: 240px;
 }
-.image-content .element-submain1,
-.image-content .element-submain2,
-.image-content .element-submain3{
+.herro-section .image-content .element-submain1,
+.herro-section .image-content .element-submain2,
+.herro-section .image-content .element-submain3{
     position: absolute;
 }
-.image-content .element-submain1{
+.herro-section .image-content .element-submain1{
     right: 14rem;
-    top: 1rem;
+    top: 5rem;
     animation: bubbleAnimation 2s infinite ease-in-out;
 }
-.image-content .element-submain2{
+.herro-section .image-content .element-submain2{
     right: 14rem;
-    top: 10rem;
+    top: 12rem;
     transition: transform .3s;
     animation: bubbleAnimation 2s infinite ease-in-out;
 }
-.image-content .element-submain3{
-    right: 30rem;
-    top: 10rem;
-    /* animation: spinerAnimation 2s infinite alternate; */
+.herro-section .image-content .element-submain3{
+    right: 27rem;
+    top: 6rem;
     animation: 2s linear .5s infinite  spinerAnimation;
 }
 /* image-content end */
-/* social medias start */
+/* social medias.herro-section .image-content  start */
 .social-medias{
-    position: absolute;
     bottom: -4rem;
     right: 11rem;
     width: 25rem;
@@ -298,14 +307,14 @@ nav ul li:nth-last-child(1) a{
     justify-content: space-around;
     align-items: center;
 }
-.social-medias ul{
+.herro-section .image-content .social-medias ul{
     width: 70%;
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.social-medias ul li{
+.herro-section .image-content .social-medias ul li{
     width: 40px;
     height: 40px;
     background-color: #433874;
@@ -314,11 +323,12 @@ nav ul li:nth-last-child(1) a{
     justify-content: center;
     align-items: center;
     transition: background-color .3s;
+    z-index: 5;
 }
-.social-medias ul li img{
+.herro-section .image-content .social-medias ul li img{
     transition: filter .3s .2s;
 }
-.social-medias ul li:hover{
+.herro-section .image-content .social-medias ul li:hover{
     cursor: pointer;
     background-color: var(--color-secoundary);
     img{
@@ -331,7 +341,6 @@ nav ul li:nth-last-child(1) a{
 /* project section start */
 .project-section{
     margin: 12rem 5rem;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -339,7 +348,6 @@ nav ul li:nth-last-child(1) a{
 }
 .project-section .text-project{
     text-align: center;
-    max-height: 30vh;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -352,16 +360,16 @@ nav ul li:nth-last-child(1) a{
 }
 .project-section .slide-bar-project{
     position: relative;
-    height: 70vh;
     background-color: var(--color-secoundary);
     border-radius: 1rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 2rem;
 }
 .project-section .slide-bar-project .card-slide{
-    width: 23rem;
-    height: 23rem;
+    width: 20rem;
+    height: 20rem;
     backdrop-filter: blur(40px);
     background-color: rgba(117, 86, 255, 0.10);
     border-radius: .8rem;
@@ -373,16 +381,21 @@ nav ul li:nth-last-child(1) a{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: opacity .5s, box-shadow .5s;
 }
 .project-section .slide-bar-project .card-slide img{
     width: 16rem;
+    transition: transform .3s;
+}
+.project-section .slide-bar-project .card-slide{
+    transition: diplay .3s;
 }
 .project-section .slide-bar-project .card-slide h5{
     font-size: 2rem;
     color: var(--color-tersier);
     text-decoration: underline;
 }
-.project-section .slide-bar-project .card-slide .navigation-slide{
+.project-section .slide-bar-project .card-slide .headerigation-slide{
     position: absolute;
     top: -4.4rem;
     width: 23rem;
@@ -391,53 +404,236 @@ nav ul li:nth-last-child(1) a{
     background-color: var(--color-tersier);
     opacity: 0;
 }
-
+.project-section .slide-bar-project .card-slide:hover{
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .05),
+    2px 2px 4px rgba(255, 255, 255, .08) inset;
+    img{
+        transform: scale(1.4);
+    }
+    a{
+        display: none;
+    }
+}
 
 .active-card-slide{
     opacity: 1 !important;
     border: 2px solid var(--color-tersier);
 }
-.active-navigation-slide{
+.active-headerigation-slide{
     opacity: 1 !important;
 }
 /* project section end */
+/* last project start */
+.project-section .last-project{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.project-section .last-project .card-last-project{
+    display: flex;
+    padding: 2rem 2rem;
+    background-color: var(--color-secoundary);
+    border-radius: 1rem;
+}
+.project-section .last-project .card-last-project:nth-child(2){
+    background-color: var(--color-primary);
+    .image-herro-card{
+        order: 2;
+    }
+    .text-herro-card{
+        order:1;
+    }
+}
 
+.project-section .last-project .card-last-project .image-herro-card{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-section .last-project .card-last-project .image-herro-card img{
+    width: 100%;
+    border-radius: 1rem;
+}
+.project-section .last-project .card-last-project .text-herro-card{
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: .7rem;
+    width: 50%;
+}
+.project-section .last-project .card-last-project .text-herro-card h2 span{
+    color: var(--text-primary);
+}
+.project-section .last-project .card-last-project .text-herro-card h6{
+    font-weight: 200;
+    font-size: .9rem;
+    color: #b8b8b8;
+}
+.project-section .last-project .card-last-project .text-herro-card p{
+    font-weight: 300;
+}
+.project-section .last-project .card-last-project .text-herro-card .action{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+}
+.project-section .last-project .card-last-project .text-herro-card .action a{
+    text-decoration: none;
+    color: var(--text-secoundary);
+    font-weight: 300;
+    transition: color .5s;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.project-section .last-project .card-last-project .text-herro-card .action a:hover{
+    color: var(--color-tersier);
+}
+/* last project end */
+/* contact-me start */
+.contact-me-section{
+    height: 3rem;
+    background-color: var(--color-secoundary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+    color: var(--text-secoundary);
+    border-radius: .5rem;
+}
+.contact-me-section .text-contact-me{
+    width: 60%;
+}
+.contact-me-section .text-contact-me h5{
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+.contact-me-section .action{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2;
+}
+ .contact-me-section .action a{
+    text-decoration: none;
+    color: var(--text-secoundary);
+    width: 11rem;
+    padding: .7rem 1.5rem;
+    background-color: var(--color-tersier);
+    letter-spacing: .05rem;
+    border-radius: .3rem;
+    transition: letter-spacing .2s, background-color .2s, color .2s;
+}
+.contact-me-section .action a:nth-last-child(1){
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-tersier2);
+}
+.contact-me-section .action a:hover{
+    color: var(--text-primary);
+    letter-spacing: 0;
+    background-color: var(--color-primary);
+}
+.contact-me-section .action a:nth-last-child(1):hover{
+    border: 1px solid var(--color-tersier);
+}
+/* contact-me start */
 
 
 /*responsive breakpoint*/
 /*ukuran Tablet*/
-@media(max-width:768px){
+@media(max-width: 888px){
+    header ul.list-menu{
+        gap: .7rem;
+    }
+    .herro-section .text-content .bottom {
+        gap: .7rem;
+    }
+    .herro-section .text-content .bottom a{
+        font-size: .8rem;
+    }
+    .herro-section .text-content .bottom svg{
+        display: none;
+    }
+    .herro-section .image-content .element-main{
+        right: 5rem;
+        top: 15rem;
+    }
+    .herro-section .image-content .element-submain1{
+        right: 5rem;
+        top: 10rem;
+    }
+    .herro-section .image-content .element-submain2{
+        right: 5rem;
+        top: 16rem;
+    }
+    .herro-section .image-content .element-submain3{
+        right: 19rem;
+        top: 10rem;
+    }
+    .project-section,
+    .herro-section{
+        margin: 2rem 2.5rem;
+    }
+    header{
+        padding: 0 2.5rem;
+    }
+    /* project start */
+    .project-section .slide-bar-project{
+        height: 17rem;
+        position: relative;
+    }
+    .project-section .slide-bar-project .card-slide{
+        width: 12rem;
+        height: 12rem;
+    }
+    .project-section .slide-bar-project .card-slide img{
+        width: 12rem;
+    }
+    .project-section .slide-bar-project .card-slide a{
+        position: absolute;
+        text-align: center;
+    }
+    .project-section .slide-bar-project .card-slide.active{
+        opacity: 1;
+        border: 2px solid var(--color-tersier);
+    }
+    .project-section .last-project .card-last-project{
+        gap: .7;
+    }
+    .project-section .last-project .card-last-project .text-herro-card .action{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+    .contact-me-section .text-contact-me{
+        width: 40%;
+    }
+    .contact-me-section .text-contact-me h5{
+        font-size: 1rem;
+    }
+    .contact-me-section .action{
+        width: 60%;
+        justify-content: space-around;
+    }
+    .contact-me-section .action a{
+        width: 10.4rem;
+    }
+    /* project end */
 }
 
 /*ukuran mobile*/
-@media(max-width:768px){
-    nav{
+@media(max-width:558px){
+    header{
         padding: 0;
         justify-content: space-around;
         z-index: 999;
-        position: sticky;
     }
-    nav ul.list-menu{
+    header ul.list-menu{
         position: absolute;
         width: 70%;
         left: 0;
@@ -453,7 +649,7 @@ nav ul li:nth-last-child(1) a{
         transform: translateX(-100%);
         transition: .5s;
     }
-    nav ul.list-menu li{
+    header ul.list-menu li{
         width: 80%;
         overflow: hidden;
         justify-content: flex-start;
@@ -464,15 +660,15 @@ nav ul li:nth-last-child(1) a{
         border-radius: 20px 0 0 20px;
         background-color: var(--color-primary);
     }
-    nav ul.list-menu li::before{
+    header ul.list-menu li::before{
         height: 45px;
     }
-    nav ul.list-menu li a,
-    nav ul.list-menu li svg
+    header ul.list-menu li a,
+    header ul.list-menu li svg
     {
         z-index: 999;
     }
-    nav ul.list-menu li svg{
+    header ul.list-menu li svg{
         display: block;
         width: 25px;
         height: 25px;
@@ -480,12 +676,12 @@ nav ul li:nth-last-child(1) a{
         text-shadow: 1px 1px 2px wheat;
         transition: color .6s, transform .3;
     }
-    nav ul.list-menu li:hover svg,
-    nav ul.list-menu li:hover a{
+    header ul.list-menu li:hover svg,
+    header ul.list-menu li:hover a{
         fill: #cecece;
         animation: scale .5s .3s;
     }
-    nav ul.list-menu li:hover a{
+    header ul.list-menu li:hover a{
         animation: scale .5s .1s;
     }
 
@@ -502,21 +698,26 @@ nav ul li:nth-last-child(1) a{
     /* herro section start mobile */
     .herro-section{
         flex-direction: column;
-        margin: 1rem;
+        gap: 2rem;
+        margin: 2rem;
     }
     .herro-section .text-content{
-        order: 2;
+        order: 3;
         width: 100%;
-        margin: 0;
         padding: 0;
     }
     .herro-section .text-content .bottom a{
-        letter-spacing: 0;
+        font-size: 11px !important;
+    }
+    .herro-section .text-content .bottom a:hover{
+        letter-spacing: 2px;
+        svg{
+            display: none;
+        }
     }
     .herro-section .image-content{
         order: 1;
         width: 100%;
-        margin-bottom: 7rem;
     }
     .herro-section .image-content .image{
         right: 0;
@@ -526,39 +727,111 @@ nav ul li:nth-last-child(1) a{
         right: 0;
         top: 0;
     }
-    .herro-section .image-content .element-main{
+
+    .herro-section .herro-section {
         right: 2rem;
+        top: 4rem;
+    }
+    .herro-section .image-content .element-main{
+        right: .4rem;
         top: 8rem;
     }
     .herro-section .image-content .element-submain1{
         right: 2rem;
-        top: 4rem;
+        top: 2rem;
     }
     .herro-section .image-content .element-submain2{
-        right: 2rem;
-        top: 15rem;
+        right: 1rem;
+        top: 9rem;
     }
     .herro-section .image-content .element-submain3{
         right: 16rem;
         top: 3rem;
     }
     .herro-section .social-medias{
-        top: -17rem;
-        right: 0;
+        order: 2;
+        position: static;
         width: 20rem;
     }
     .herro-section .social-medias h5{
         display: none;
     }
     /* herro section end mobile */
+
+    /* project section start mobil */
+    .project-section,
+    .herro-section{
+        margin: 5rem 1rem;
+        padding: 0;
+    }
+    .project-section{
+        margin-right: 1rem;
+        margin-left: 1rem;
+        padding: 0;
+    }
+    .project-section .slide-bar-project{
+        flex-direction: column;
+        max-height: fit-content;
+        height: fit-content;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .project-section .slide-bar-project .card-slide{
+        width: 20rem;
+        height: 20rem;
+    }
+    .project-section .last-project .card-last-project{
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-section .last-project .card-last-project:nth-child(2){
+        .text-herro-card{
+            order: 2;
+        }
+        .image-herro-card{
+            order: 1;
+        }
+    }
+    .project-section .last-project .card-last-project{
+        gap: 1rem;
+    }
+    .project-section .last-project .card-last-project .text-herro-card{
+        padding: 0;
+    }
+    .project-section .last-project .card-last-project:nth-child(2){
+        background-color: var(--color-secoundary);
+    }
+    .project-section .last-project .card-last-project .text-herro-card,
+    .project-section .last-project .card-last-project .image-herro-card{
+        width: 90%;
+    }
+    .contact-me-section{
+        flex-direction: column;
+        height: fit-content;
+        gap: 2rem;
+        margin: 0;
+        padding: 1rem .2rem;
+    }
+    .contact-me-section .text-contact-me{
+        padding-left: 1rem;
+    }
+    .contact-me-section .text-contact-me,
+    .contact-me-section .action{
+        width: 100%;
+    }
+    .contact-me-section a{
+        width: 40%;
+        margin-left: 1rem;
+        svg{
+            display: none;
+        }
+    }
+    /* project section end mobil */
 }
-
-
-nav ul.slide{
+header ul.slide{
     opacity: 1;
     transform: translateX(0);
 }
-
 /* animation */
 @keyframes scale {
     0%
