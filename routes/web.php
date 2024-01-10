@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\DashboardPostController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,8 @@ use App\Http\Controllers\DashboardPostController;
 Route::get('/', function () {
     return view('home',[
         "title" => "Home",
-        "active" => "home" 
+        "active" => "home",
+        "user" => User::find(1)
     ]);
 });
 

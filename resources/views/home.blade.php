@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Rosad Andi Pratama</title>
+        <title>{{ $user->name }}</title>
         <link rel="stylesheet" href="{{ asset('css/mycss/home.css') }}"/>
         {{-- font --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,7 +63,7 @@
         <section class="herro-section" id="home">
             <div class="text-content">
                 <h4>Hello Guys</h4>
-                <h1>I am <span>Rosad Andi Pratama</span></h1>
+                <h1>I am <span>{{ $user->name }}</span></h1>
                 <span class="sub-head">frond end developer</span>
                 <div class="underline"></div>
                 <p>
@@ -227,9 +227,9 @@
         <section id="why-me" class="why-me">
             <div class="card-why-me">
                 <div class="card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434m6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434"/>
                       </svg>
                 </div>
                 <div class="card-description">
@@ -239,10 +239,8 @@
             </div>
             <div class="card-why-me">
                 <div class="card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 20h9"></path>
-                        <path d="M12 4v16"></path>
-                        <path d="M21 11l-9-8-9 8"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-emoji-kiss" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M12.493 13.368a7 7 0 1 1 2.489-4.858c.344.033.68.147.975.328a8 8 0 1 0-2.654 5.152 8.58 8.58 0 0 1-.81-.622Zm-3.731-3.22a13 13 0 0 0-1.107.318.5.5 0 1 1-.31-.95c.38-.125.802-.254 1.192-.343.37-.086.78-.153 1.103-.108.16.022.394.085.561.286.188.226.187.497.131.705a1.892 1.892 0 0 1-.31.593c-.077.107-.168.22-.275.343.107.124.199.24.276.347.142.197.256.397.31.595.055.208.056.479-.132.706-.168.2-.404.262-.563.284-.323.043-.733-.027-1.102-.113a14.87 14.87 0 0 1-1.191-.345.5.5 0 1 1 .31-.95c.371.12.761.24 1.109.321.176.041.325.069.446.084a5.609 5.609 0 0 0-.502-.584.5.5 0 0 1 .002-.695 5.52 5.52 0 0 0 .5-.577 4.465 4.465 0 0 0-.448.082Zm.766-.087-.003-.001-.003-.001c.004 0 .006.002.006.002Zm.002 1.867-.006.001a.038.038 0 0 1 .006-.002ZM6 8c.552 0 1-.672 1-1.5S6.552 5 6 5s-1 .672-1 1.5S5.448 8 6 8m2.757-.563a.5.5 0 0 0 .68-.194.934.934 0 0 1 .813-.493c.339 0 .645.19.813.493a.5.5 0 0 0 .874-.486A1.934 1.934 0 0 0 10.25 5.75c-.73 0-1.356.412-1.687 1.007a.5.5 0 0 0 .194.68ZM14 9.828c1.11-1.14 3.884.856 0 3.422-3.884-2.566-1.11-4.562 0-3.421Z"/>
                       </svg>
                 </div>
                 <div class="card-description">
@@ -252,12 +250,9 @@
             </div>
             <div class="card-why-me">
                 <div class="card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="21" y1="12" x2="3" y2="12"></line>
-                        <line x1="12" y1="21" x2="12" y2="3"></line>
-                        <path d="M21 12a9 9 0 0 0-9-9"></path>
-                        <path d="M12 21a9 9 0 0 0 9-9"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-emoji-laughing" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M12.331 9.5a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5"/>
                       </svg>
                 </div>
                 <div class="card-description">
@@ -267,6 +262,46 @@
             </div>
         </section>
         {{-- section-why-me end --}}
+        {{-- section about me start --}}
+        <section class="about">
+            <div class="image">
+                <img src="{{ asset('img/elements/herro-image.png') }}" alt="">
+            </div>
+            <div class="description-about">
+                <h3>{{ $user->name }}</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque natus ratione illo laborum id similique deleniti nam nisi corrupti repellendus?</p>
+                <div class="study">
+                    <ul>
+                        <li>S1 | Teknik Informatik | 2023</li>
+                        <li>SMK | Teknik Mesin | 2019</li>
+                    </ul>
+                </div>
+                <div class="action-about">
+                    <a href="#">Contact me</a>
+                    <a href="#">Download Resume</a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="sosial-media">
+                <ul>
+                    <li><a href="#">Instagram | <span>rosadandi_pratama</span></a></li>
+                    <li><a href="#">Facebook | <span>Rosad Andi Pratama</span></a></li>
+                    <li><a href="#">Tiktok | <span>rosadandipratama86</span></a></li>
+                    <li><a href="#">Linked in | <span>Rosad Andi Pratama</span></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Instagram | <span>rosadandi_pratama</span></a></li>
+                    <li><a href="#">Facebook | <span>Rosad Andi Pratama</span></a></li>
+                    <li><a href="#">Tiktok | <span>rosadandipratama86</span></a></li>
+                    <li><a href="#">Linked in | <span>Rosad Andi Pratama</span></a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                &copy; Rosad Andi Pratama | All Right Reserved.
+            </div>
+        </footer>
+        {{-- section about me end --}}
         <script src="{{ asset('js/myjs/home.js') }}">
         </script>
     </body>

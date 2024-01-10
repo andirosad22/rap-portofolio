@@ -542,7 +542,136 @@ header ul li:nth-last-child(1) a{
     border: 1px solid var(--color-tersier);
 }
 /* contact-me start */
+/* why me start */
+.why-me{
+    display: flex;
+}
+.why-me .card-why-me{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.why-me .card-why-me .card-icon{
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-tersier);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.why-me .card-why-me .card-icon svg{
+    fill: var(--color-tersier2);
+}
+.why-me .card-why-me .card-description{
+    color: var(--text-secoundary);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.why-me .card-why-me .card-description h5{
+    font-size: 1.1rem;
+}
+.why-me .card-why-me .card-description p{
+    font-weight: 200;
+    color: #cecece;
+}
+/* why me end */
 
+/* about me */
+.about{
+    margin: 2rem 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+.about .image{
+    width: 350px;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: rgba(51, 51, 51, 0.5);
+    border-radius: .6rem;
+    box-shadow: 5px 5px 10px var(--color-tersier);
+    overflow: hidden;
+}
+.about .image img{
+    width: 300px;
+}
+.about .description-about{
+    width: 60%;
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.about .description-about ul{
+    list-style: none;
+}
+.about .description-about ul li{
+    color: #cecece;
+    font-weight: 200;
+}
+.about .description-about .action-about{
+    display: flex;
+    justify-content: space-around;
+    a{
+        text-decoration: none;
+        padding: 1rem 1.5rem;
+        background-color: var(--color-tersier);
+        border-radius: .3rem;
+        color: var(--color-tersier2);
+        border: 1px solid var(--color-tersier);
+        transition: color .2s, background-color .2s, border .2s;
+    }
+    a:nth-last-child(1){
+        background-color: var(--color-primary);
+        color: var(--text-primary);
+        border: 1px solid var(--color-tersier);
+    }
+    a:hover{
+        color: var(--text-primary);
+        background-color: var(--color-primary);
+        border: 1px solid var(--color-tersier);
+    }
+    a:nth-last-child(1):hover{
+        background-color: var(--color-tersier);
+        color: var(--text-secoundary);
+    }
+}
+/* footer start */
+footer{
+    background-color: var(--color-secoundary);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+footer .sosial-media{
+    list-style: none;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-around;
+}
+footer .sosial-media ul{
+    list-style: none;
+}
+footer .sosial-media ul li a{
+    text-decoration: none;
+    color: var(--text-secoundary);
+    span{
+        color: #cecece;
+        font-weight: 100;
+    }
+}
+footer .copyright{
+    text-align: center;
+    color: var(--text-secoundary);
+    font-weight: 200;
+}
 
 /*responsive breakpoint*/
 /*ukuran Tablet*/
@@ -576,7 +705,8 @@ header ul li:nth-last-child(1) a{
         top: 10rem;
     }
     .project-section,
-    .herro-section{
+    .herro-section,
+    .why-me{
         margin: 2rem 2.5rem;
     }
     header{
@@ -624,7 +754,27 @@ header ul li:nth-last-child(1) a{
         width: 10.4rem;
     }
     /* project end */
+    .why-me .card-why-me .card-description{
+        padding: 1rem;
+    }
+    /* about me  */
+    .about .image{
+        width: 300px;
+    }
+    .about .description-about{
+        width: 350px;
+    }
+    .about .description-about ul{
+        list-style: none;
+    }
+    .about .description-about .action-about{
+        a{
+            padding: .5rem 1rem;
+        }
+    }
 }
+
+/* footer end */
 
 /*ukuran mobile*/
 @media(max-width:558px){
@@ -827,6 +977,36 @@ header ul li:nth-last-child(1) a{
         }
     }
     /* project section end mobil */
+    /* why me start */
+    .why-me{
+        flex-direction: column;
+    }
+    /* why me end */
+    /* about-me start */
+    .about {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about .image{
+        width: 100%;
+    }
+    .about .description-about{
+        gap: 1rem;
+        width: 100%;
+    }
+    .about .description-about .action-about{
+        flex-direction: column;
+        width: 55%;
+        gap: 1rem;
+        text-align: center;
+    }
+    /* about-me end */
+    /* footer start */
+    footer .sosial-media{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    /* footer end */
 }
 header ul.slide{
     opacity: 1;
