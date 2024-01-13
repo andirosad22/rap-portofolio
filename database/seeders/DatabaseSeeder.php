@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Projects;
+use App\Models\Skill;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,19 +23,47 @@ class DatabaseSeeder extends Seeder
             'name' => 'Rosad Andi Pratama',
             'username' => 'rosadandipratama',
             'email' => 'andirosad22@gmail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'about_me' => 'Saya Lulusan S1 program studi teknik informatika fakultas muhammadiyah paguyangan brebes, saya senang belajar hal baru apalagi terkait dengan teknologi pengembangan website, saya memahami programing web dengan baik mampu membuat website yang responsif, dengan menguasai bahasa pemrograman PHP dan javascript dan menguasai framework laravel dan express js',
+            'instagram' => 'rosadandi_pratama',
+            'linked_in' => 'https://linkedin.com/in/rosad-andi-pratama',
+            'github' => 'https://github.com/andirosad22',
+            'no_hp' => '093937269266',
+            'image_herro' => 'image-herro.png',
+            'image_profile' => 'image-profile.png',
+            'is_admin' => true
         ]);
-        User::factory(5)->create();
-
+        // User::factory(5)->create();
 
         Category::create([
             'name' => 'Web Programming',
             'slug' => 'web-programing'
         ]);
 
-        Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
+        Skill::create([
+            'title' => 'Back end',
+            'slug' => 'back-end',
+            'description' => 'saya menguasai pemrograman back end',
+            'image_icon' => 'icon.png',
+        ]);
+        Skill::create([
+            'title' => 'Pround end',
+            'slug' => 'pround-end',
+            'description' => 'saya menguasai pemrograman pround end',
+            'image_icon' => 'icon.png',
+        ]);
+        Skill::create([
+            'title' => 'Full Stack',
+            'slug' => 'full-stack',
+            'description' => 'saya menguasai pemrograman full stack',
+            'image_icon' => 'icon.png',
+        ]);
+        Projects::create([
+            'title' => 'Sistem Informasi Pajak Bumi dan Bangunan',
+            'slug' => 'sistem-informasi-pengelolaan-pajak-bumi-bangunan',
+            'your_task' => 'fround End',
+            'description' => 'saya mengerjakan proje ini pada bagian pround end dimana saya membuat tampilan menarik dari website ini dan responsive',
+            'image' => 'image.png'
         ]);
 
         Post::factory(20)->create();

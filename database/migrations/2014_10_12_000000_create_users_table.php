@@ -17,6 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
+            $table->text('about_me');
+            $table->string('instagram');
+            $table->string('linked_in');
+            $table->string('github');
+            $table->string('no_hp');
+            $table->string('image_profile')->nullable();
+            $table->string('image_herro')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\HomeController;
 use App\Models\User;
 
 /*
@@ -22,13 +23,14 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    return view('home',[
-        "title" => "Home",
-        "active" => "home",
-        "user" => User::find(1)
-    ]);
-});
+// Route::get('/', function () {
+//     return view('home',[
+//         "title" => "Home",
+//         "active" => "home",
+//         "user" => User::find(1)
+//     ]);
+// });
+Route::get('/',[HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about',[
