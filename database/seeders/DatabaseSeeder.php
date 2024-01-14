@@ -33,11 +33,16 @@ class DatabaseSeeder extends Seeder
             'image_profile' => 'image-profile.png',
             'is_admin' => true
         ]);
+        
         // User::factory(5)->create();
 
         Category::create([
             'name' => 'Web Programming',
             'slug' => 'web-programing'
+        ]);
+        Category::create([
+            'name' => 'Personal',
+            'slug' => 'personal'
         ]);
 
         Skill::create([

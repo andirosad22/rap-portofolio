@@ -60,7 +60,6 @@
                 <div class="position-absolute badge-dark px-3 py2 text-white" style="background-color: rgba(0, 0, 0, .5)">
                     <a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none text-white">{{ $post->category->name }}</a>
                 </div>
-
                     @if ($post->image)
                     <img src="{{ asset('storage/'.$post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
                 @else
