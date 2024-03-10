@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Rosad Andi Pratama',
             'username' => 'rosadandipratama',
+            'posts_id' => 1,
             'email' => 'andirosad22@gmail.com',
             'password' => bcrypt('password'),
             'about_me' => 'Saya Lulusan S1 program studi teknik informatika fakultas muhammadiyah paguyangan brebes, saya senang belajar hal baru apalagi terkait dengan teknologi pengembangan website, saya memahami programing web dengan baik mampu membuat website yang responsif, dengan menguasai bahasa pemrograman PHP dan javascript dan menguasai framework laravel dan express js',
@@ -33,7 +34,7 @@ class DatabaseSeeder extends Seeder
             'image_profile' => 'image-profile.png',
             'is_admin' => true
         ]);
-        
+
         // User::factory(5)->create();
 
         Category::create([
@@ -47,6 +48,7 @@ class DatabaseSeeder extends Seeder
 
         Skill::create([
             'title' => 'Back end',
+            'user_id' => 1,
             'slug' => 'back-end',
             'description' => 'saya menguasai pemrograman back end',
             'image_icon' => 'icon.png',

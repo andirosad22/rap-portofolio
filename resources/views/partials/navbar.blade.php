@@ -1,4 +1,17 @@
-  <nav class="navbar navbar-expand-md bg-transparent sticky-top navbar-public">
+
+<style>
+    /* Gaya awal navbar */
+    .navbar-blog {
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out; /* Efek transisi ketika background berubah */
+    }
+    /* Gaya navbar saat di-scroll */
+    .navbar-scroll {
+    background-color: blue !important;
+    }
+
+</style>
+  <nav class="navbar navbar-expand-md bg-transparent sticky-top bg-danger navbar-public navbar-blog">
     <div class="container">
       <a class="navbar-brand icon-raptech" href="#">RAPTech</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -22,6 +35,22 @@
             </li>
             <li class="nav-item {{ ($active =="about")? 'active': '' }}">
               <a class="nav-link {{ ($active =="about") ? 'active' : '' }}" href="/about">About</a>
+            </li>
+            <li class="nav-item w-4 flex-item search">
+                <div class="col-md-6">
+                    <form action="/posts">
+                        @if (request('category'))
+                            <input type="hidden" name="category" value="{{ request('category') }}">
+                        @endif
+                        @if (request('author'))
+                            <input type="hidden" name="author" value="{{ request('author') }}">
+                        @endif
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search" name="search" value="{{ request('search') }}">
+                            <button class="btn btn-danger" type="submit" ><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                </div>
             </li>
             <li class="nav-item dropdown login-btn">
               <ul class="navbar-nav ms-auto">
@@ -48,8 +77,24 @@
               </ul>
             </li>
           </ul>
-          
+
         </div>
       </div>
     </div>
   </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      window.addEventListener("scroll", function() {
+        var navbar = document.querySelector(".navbar-blog");
+        // Tentukan tinggi scroll saat perubahan warna background (misal: 50 piksel)
+        var scrollThreshold = 50;
+
+        if (window.scrollY > scrollThreshold) {
+          navbar.classList.add("navbar-scroll");
+        } else {
+          navbar.classList.remove("navbar-scroll");
+        }
+      });
+    });
+  </script>

@@ -14,7 +14,7 @@ class AdminCategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
+    {
         $this->authorize('admin');
         return view('dashboard.categories.index',[
             'categories' => Category::all()
@@ -57,7 +57,9 @@ class AdminCategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return 'show here';
+        return view('dashboard.categories.show', [
+            "Category" => $category
+        ]);
     }
 
     /**

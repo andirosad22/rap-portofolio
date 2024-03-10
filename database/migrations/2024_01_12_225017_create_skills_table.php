@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id');
+            $table->foreignId('user_id')->default(1);
             $table->string('title');
             $table->string('slug');
             $table->string('description');

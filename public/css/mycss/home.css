@@ -648,23 +648,42 @@ footer{
     background-color: var(--color-secoundary);
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem 4rem;
+    gap: 1.5rem;
+}
+footer .herro-footer{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-secoundary);
+}
+footer .herro-footer li h3{
+    font-size: 2rem;
+}
+footer .herro-footer li p{
+    color: #cecece;
+    font-weight: 200;
+    a{
+        text-decoration: none;
+        color: var(--text-primary);
+    }
 }
 footer .sosial-media{
     list-style: none;
     display: flex;
-    padding: 2rem;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 2rem;
 }
 footer .sosial-media ul{
     list-style: none;
 }
-footer .sosial-media ul li a{
+footer .sosial-media li a{
     text-decoration: none;
     color: var(--text-secoundary);
-    span{
-        color: #cecece;
-        font-weight: 100;
+    svg{
+        fill: #b1b1b1;
+        width: 20;
+        height: 20;
     }
 }
 footer .copyright{
