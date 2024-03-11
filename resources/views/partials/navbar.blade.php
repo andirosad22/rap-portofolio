@@ -8,8 +8,10 @@
     /* Gaya navbar saat di-scroll */
     .navbar-scroll {
     background-color: blue !important;
+    .container .nav-item .nav-link{
+        color: white;
     }
-
+    }
 </style>
   <nav class="navbar navbar-expand-md bg-transparent sticky-top bg-danger navbar-public navbar-blog">
     <div class="container">

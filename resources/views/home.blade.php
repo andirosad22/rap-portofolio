@@ -46,7 +46,7 @@
                     <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
                     <path d="M1 1a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h.5a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5.5.5 0 0 1 1 0 .5.5 0 0 0 .5.5h.5a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6.707L6 1.293A1 1 0 0 0 5.293 1zm0 1h4.293L6 2.707A1 1 0 0 0 6.707 3H15v10h-.085a1.5 1.5 0 0 0-2.4-.63C11.885 11.223 10.554 10 8 10c-2.555 0-3.886 1.224-4.514 2.37a1.5 1.5 0 0 0-2.4.63H1z"/>
                     </svg>
-                    <a href="#contact-us">Contact Us</a>
+                    <a href="https://wa.link/cb2qdu" target="_blank">Contact Us</a>
                 </li>
             </ul>
             {{-- <ul class="list-contact-us">
@@ -235,7 +235,9 @@
             </div>
             <div class="description-about">
                 <h3>{{ $user->name }}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque natus ratione illo laborum id similique deleniti nam nisi corrupti repellendus?</p>
+                    <i>
+                        <p>"Good learning skills For tomorrow <br> it's simple,<br> learn from yesterday and today"</p>
+                    </i>
                 <div class="study">
                     <ul>
                         <li>S1 | Teknik Informatik | 2023</li>
@@ -243,7 +245,7 @@
                     </ul>
                 </div>
                 <div class="action-about">
-                    <a href="#">Contact me</a>
+                    <a href="https://wa.link/cb2qdu">Contact me</a>
                     <a href="https://drive.google.com/file/d/1zmQoTKYNbbX4BsceRIVVDdglZJnBOMEm/view?usp=drive_link" target="_blank">Download CV</a>
                 </div>
             </div>
